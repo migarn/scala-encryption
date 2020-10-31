@@ -14,19 +14,20 @@ class CaesarCipher(symbols: Array[Char], key: Int) extends Cipher(symbols) {
 
         println("toTransform: " + toTransform + ", transformed: " + transformed) // to be removed
 
-        val letterIndex: Int = symbols.indexOf(toTransform.head)
+        val character = toTransform.head
 
-        println("letterIndex: " + letterIndex) // to be removed
-
-        val newTransformed: String = transformed + symbols(letterIndex + key)
-
+        val newTransformed: String = {
+          if (symbols.contains(character)) {
+            val letterIndex: Int = symbols.indexOf(toTransform.head)
+            println("letterIndex: " + letterIndex) // to be removed
+            transformed + symbols(letterIndex + key)
+          }
+          else transformed + character
+        }
         println("newTransformed: " + newTransformed) // to be removed
-
         auxiliaryTransform(toTransform.tail, newTransformed)
-
       }
     }
-
     auxiliaryTransform(text.toUpperCase, "")
   }
 
