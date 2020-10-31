@@ -8,11 +8,11 @@ abstract class Cipher(val symbols: List[Char]) {
   // reversed alphabet.
   // The transform function's implementation distinguishes different ciphers.
 
-  protected abstract def transform(text: String, symbols: List[Char]): String
+  protected def transform(text: String, symbols: List[Char]): String
 
   def encryptOnlyLetters(text: String): String = {
     require(text != null)
-    transform(text.filter(c => c.isLetter), symbols)
+    transform(text.filter(_.isLetter), symbols)
   }
 
   def decrypt(text: String): String = {
