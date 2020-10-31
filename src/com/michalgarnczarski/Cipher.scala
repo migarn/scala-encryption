@@ -6,7 +6,8 @@ abstract class Cipher(val symbols: List[Char]) {
 
   // Function enabling both encrypting and decrypting of a given text. Decrypting works as encrypting but with
   // reversed alphabet.
+  // The transform function's implementation distinguishes different ciphers.
 
-  protected abstract def transform(text: String, symbols: Array[Char])
+  protected abstract def transform(text: String, symbols: Array[Char]): String
 
 }
