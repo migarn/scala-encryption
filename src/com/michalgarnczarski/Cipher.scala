@@ -6,8 +6,6 @@ abstract class Cipher(val symbols: List[Char]) {
   // abstract transform function.
   // Encrypting and decrypting is carried out in the same function, but with the regular or reversed symbols list.
 
-  val reversedSymbols: List[Char] = symbols.reverse
-
   // The transform function is meant to both encrypting and decrypting. The function's implementation
   // depends on a specific cipher.
 
@@ -31,6 +29,6 @@ abstract class Cipher(val symbols: List[Char]) {
 
   def decrypt(text: String): String = {
     require(text != null)
-    transform(text, reversedSymbols)
+    transform(text, symbols.reverse)
   }
 }
