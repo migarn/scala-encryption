@@ -10,6 +10,11 @@ abstract class Cipher(val symbols: List[Char]) {
 
   protected def transform(text: String, symbols: List[Char]): String
 
+  def encryptAll(text: String): String = {
+    require(text != null)
+    transform(text, symbols)
+  }
+
   def encryptOnlyLetters(text: String): String = {
     require(text != null)
     transform(text.filter(_.isLetter), symbols)
