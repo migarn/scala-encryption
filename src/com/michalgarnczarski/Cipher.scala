@@ -8,6 +8,11 @@ abstract class Cipher(val symbols: List[Char]) {
   // reversed alphabet.
   // The transform function's implementation distinguishes different ciphers.
 
-  protected abstract def transform(text: String, symbols: Array[Char]): String
+  protected abstract def transform(text: String, symbols: List[Char]): String
+
+  def decrypt(text: String): String = {
+    require(text != null)
+    transform(text, reversedSymbols)
+  }
 
 }
