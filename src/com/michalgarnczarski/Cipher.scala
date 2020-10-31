@@ -2,10 +2,6 @@ package com.michalgarnczarski
 
 abstract class Cipher(val symbols: List[Char]) {
 
-  // The class enables both encrypting and decrypting given texts. The class is implemented as abstract class with
-  // abstract transform function.
-  // Encrypting and decrypting is carried out in the same function, but with the regular or reversed symbols list.
-
   // The transform function is meant to both encrypting and decrypting. The function's implementation
   // depends on a specific cipher.
 
@@ -26,6 +22,7 @@ abstract class Cipher(val symbols: List[Char]) {
   }
 
   // The function decrypts the entire text. Symbols outside given symbols list remain undecrypted.
+  // Decryption is carried out in the same way as encryption but with reversed symbols list.
 
   def decrypt(text: String): String = {
     require(text != null)
