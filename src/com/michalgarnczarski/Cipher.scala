@@ -1,11 +1,11 @@
 package com.michalgarnczarski
 
-abstract class Cipher(val symbols: List[Char]) {
+abstract class Cipher(val symbols: Array[Char]) {
 
   // The transform function is meant to both encrypting and decrypting. The function's implementation
   // depends on a specific cipher.
 
-  protected def transform(text: String, symbols: List[Char]): String
+  protected def transform(text: String, symbols: Array[Char]): String
 
   // The function encrypts the entire text. Symbols outside given symbols list remain unencrypted.
 
