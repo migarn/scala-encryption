@@ -18,9 +18,16 @@ class CaesarCipher(symbols: Array[Char], key: Int) extends Cipher(symbols) {
 
         val newTransformed: String = {
           if (symbols.contains(character)) {
-            val letterIndex: Int = symbols.indexOf(toTransform.head)
-            println("letterIndex: " + letterIndex) // to be removed
-            transformed + symbols(letterIndex + key)
+
+            val characterIndex = symbols.indexOf(toTransform.head)
+
+            val newcharacterIndex: Int = {
+              if (characterIndex + key > symbols.length - 1)
+                symbols.length - (characterIndex + key)
+              else characterIndex + key
+            }
+            println("characterIndex: " + characterIndex) // to be removed
+            transformed + symbols(newcharacterIndex)
           }
           else transformed + character
         }
