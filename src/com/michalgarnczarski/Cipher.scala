@@ -13,26 +13,23 @@ abstract class Cipher(val symbols: List[Char]) {
 
   protected def transform(text: String, symbols: List[Char]): String
 
+  // The function encrypts the entire text. Symbols outside given symbols list remain unencrypted.
+
   def encryptAll(text: String): String = {
-
-    // The function encrypts the entire text. Symbols outside given symbols list remain unencrypted.
-
     require(text != null)
     transform(text, symbols)
   }
 
+  // The function encrypts only symbols within given symbols list. Other symbols are deleted.
+
   def encryptOnlyLetters(text: String): String = {
-
-    // The function encrypts only symbols within given symbols list. Other symbols are deleted.
-
     require(text != null)
     transform(text.filter(_.isLetter), symbols)
   }
 
+  // The function decrypts the entire text. Symbols outside given symbols list remain undecrypted.
+
   def decrypt(text: String): String = {
-
-    // The function decrypts the entire text. Symbols outside given symbols list remain undecrypted.
-
     require(text != null)
     transform(text, reversedSymbols)
   }
