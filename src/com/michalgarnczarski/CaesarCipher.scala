@@ -5,13 +5,29 @@ class CaesarCipher(symbols: Array[Char], key: Int) extends Cipher(symbols) {
 
   override protected def transform(text: String, symbols: Array[Char]): String = {
 
+    println("text: " + text) // to be removed
+
     def auxiliaryTransform(toTransform: String, transformed: String): String = {
-      val letterIndex: Int = symbols.indexOf(toTransform.head)
-      val newTransformed: String = symbols(letterIndex + key) + transformed
-      auxiliaryTransform(toTransform.tail, newTransformed)
+
+      if (toTransform == "") transformed
+      else {
+
+        println("toTransform: " + toTransform + ", transformed: " + transformed) // to be removed
+
+        val letterIndex: Int = symbols.indexOf(toTransform.head)
+
+        println("letterIndex: " + letterIndex) // to be removed
+
+        val newTransformed: String = transformed + symbols(letterIndex + key)
+
+        println("newTransformed: " + newTransformed) // to be removed
+
+        auxiliaryTransform(toTransform.tail, newTransformed)
+
+      }
     }
 
-    auxiliaryTransform(text, "")
+    auxiliaryTransform(text.toUpperCase, "")
   }
 
 }
