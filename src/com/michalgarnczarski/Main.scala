@@ -8,6 +8,21 @@ object Main {
     println(array.length-1)
 
     val symbols: Array[Char] = Array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
+
+    val s1 = "BABCIA"
+    val s2 = "BABCIa"
+    val s3 = "BAB CIA"
+    val s4 = "BAB,CIA"
+
+    println(s1.filter(c => !symbols.contains(c)) == "")
+    println(s2.filter(c => !symbols.contains(c)) == "")
+    println(s3.filter(c => !symbols.contains(c)) == "")
+    println(s4.filter(c => !symbols.contains(c)) == "")
+
+
+
+
+
     val alphabet: Alphabet = new Alphabet("Latin", symbols)
     val caesarCipher: CaesarCipher = new CaesarCipher(symbols,10)
     val str = "Hello, world"
