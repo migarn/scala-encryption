@@ -13,11 +13,15 @@ object Main {
     val s2 = "BABCIa"
     val s3 = "BAB CIA"
     val s4 = "BAB,CIA"
+    val s5 = null
+    val s6 = ""
 
     println(s1.filter(c => !symbols.contains(c)) == "")
     println(s2.filter(c => !symbols.contains(c)) == "")
     println(s3.filter(c => !symbols.contains(c)) == "")
     println(s4.filter(c => !symbols.contains(c)) == "")
+    println(s6.filter(c => !symbols.contains(c)) == "")
+
 
 
 
