@@ -4,6 +4,8 @@ object Main {
 
   def main(args: Array[String]): Unit = {
 
+    // zrefaktorować, żeby tylko auxiliary transform było w poszczególnych klasach. Albo może nawer tylko defineNewTransformed
+
     val array = Array(1,2,3)
     println(array.length-1)
 
@@ -21,6 +23,8 @@ object Main {
     println(s3.filter(c => !symbols.contains(c)) == "")
     println(s4.filter(c => !symbols.contains(c)) == "")
     println(s6.filter(c => !symbols.contains(c)) == "")
+
+
 
 
 
