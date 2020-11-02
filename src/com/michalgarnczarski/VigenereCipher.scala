@@ -12,7 +12,7 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
     // An auxiliary function implemented to transform text recursively.
 
     @tailrec
-    def auxiliaryTransform(toTransform: String, transformed: String, keyIndex: Int): String = {
+    def auxiliaryTransform(toTransform: String, transformed: String, keyCharacterIndex: Int): String = {
 
       // If 'toTransform' is empty encoding/decoding terminates
 
@@ -24,13 +24,15 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
 
       else {
         val currentCharacter = toTransform.head
-        val newTransformed: String = defineNewTransformed(currentCharacter, transformed, keyIndex)
+        val newTransformed: String = defineNewTransformed(currentCharacter, transformed, key(keyCharacterIndex))
 
-        auxiliaryTransform(toTransform.tail, newTransformed, keyIndex + 1)
+        val newCharacterIndex: Int = if (keyCharacterIndex + 1 == key.length) 0 else keyCharacterIndex + 1
+
+        auxiliaryTransform(toTransform.tail, newTransformed, newCharacterIndex)
       }
     }
 
-    def defineNewTransformed(currentCharacter: Char, transformed: String, keyIndex: Int): String = {
+    def defineNewTransformed(currentCharacter: Char, transformed: String, keyCharacter: Char): String = {
 
       // Additional auxiliary function defined for clarity.
       // If current character does not belong to symbols it is not transformed.
@@ -44,17 +46,17 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
 
         // to comment
 
-        val actualKeyIndex: Int = if (keyIndex > key.length) 0 else keyIndex
+        val keyIndex: Int = symbols.indexOf(keyCharacter.toUpper)
 
         // Index of letter after transformation is determined regarding symbols array length. If index exceeds
         // array's length it goes to the array's beginning.
 
         val newCharacterIndex: Int = {
 
-          if (characterIndex + actualKeyIndex > symbols.length - 1)
-            characterIndex + actualKeyIndex - symbols.length
+          if (characterIndex + keyIndex > symbols.length - 1)
+            characterIndex + keyIndex - symbols.length
 
-          else characterIndex + actualKeyIndex
+          else characterIndex + keyIndex
         }
 
         transformed + symbols(newCharacterIndex)
