@@ -49,23 +49,15 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
         // Index of letter after transformation is determined regarding symbols array length. If index exceeds
         // array's length it goes to the array's beginning.
 
+        val newCharacterIndex: Int = {
 
+          if (characterIndex + actualKeyIndex > symbols.length - 1)
+            characterIndex + actualKeyIndex - symbols.length
 
+          else characterIndex + actualKeyIndex
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        null
+        transformed + symbols(newCharacterIndex)
       }
     }
 
