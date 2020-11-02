@@ -12,7 +12,7 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
     // An auxiliary function implemented to transform text recursively.
 
     @tailrec
-    def auxiliaryTransform(toTransform: String, transformed: String): String = {
+    def auxiliaryTransform(toTransform: String, transformed: String, keyIndex: Int): String = {
 
       // If 'toTransform' is empty encoding/decoding terminates
 
@@ -24,18 +24,53 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
 
       else {
         val currentCharacter = toTransform.head
-        val newTransformed: String = defineNewTransformed(currentCharacter, transformed)
+        val newTransformed: String = defineNewTransformed(currentCharacter, transformed, keyIndex)
 
-        auxiliaryTransform(toTransform.tail, newTransformed)
+        auxiliaryTransform(toTransform.tail, newTransformed, keyIndex + 1)
       }
     }
 
-    def defineNewTransformed(currentCharacter: Char, transformed: String): String = {
-      null
+    def defineNewTransformed(currentCharacter: Char, transformed: String, keyIndex: Int): String = {
+
+      // Additional auxiliary function defined for clarity.
+      // If current character does not belong to symbols it is not transformed.
+
+      if (!symbols.contains(currentCharacter)) {
+        transformed + currentCharacter
+      }
+
+      else {
+        val characterIndex = symbols.indexOf(currentCharacter)
+
+        // to comment
+
+        val actualKeyIndex: Int = if (keyIndex > key.length) 0 else keyIndex
+
+        // Index of letter after transformation is determined regarding symbols array length. If index exceeds
+        // array's length it goes to the array's beginning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        null
+      }
     }
 
     // The function 'transform' returns tailrec function 'auxiliaryTransform'.
 
-    auxiliaryTransform(text.toUpperCase, "")
+    auxiliaryTransform(text.toUpperCase, "", 0)
   }
 }
