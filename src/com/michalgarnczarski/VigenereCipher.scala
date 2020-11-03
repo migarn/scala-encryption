@@ -7,12 +7,16 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
 
   // In require() there is a condition that key is not null and contains only characters belonging to symbols.
 
-  override protected def transform(text: String, symbols: Array[Char]): String = {
+  override protected def transform(text: String, innerSymbols: Array[Char]): String = {
 
     // An auxiliary function implemented to transform text recursively.
 
     @tailrec
     def auxiliaryTransform(toTransform: String, transformed: String, keyCharacterIndex: Int): String = {
+
+      println("toTransform (in auxiliaryTransform): " + toTransform)//toremove
+      println("transformed (in auxiliaryTransform): " + transformed)//toremove
+      println("keyCharacterIndex (in auxiliaryTransform): " + keyCharacterIndex)//toremove
 
       // If 'toTransform' is empty encoding/decoding terminates
 
@@ -24,13 +28,15 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
 
       else {
         val currentCharacter = toTransform.head
+        println("currentCharacter (in auxiliaryTransform): " + currentCharacter)//toremove
         val newTransformed: String = defineNewTransformed(currentCharacter, transformed, key(keyCharacterIndex))
 
-        if (symbols.contains(currentCharacter)) {
+        if (innerSymbols.contains(currentCharacter)) {
 
-          val newCharacterIndex: Int = if (keyCharacterIndex + 1 == key.length) 0 else keyCharacterIndex + 1
+          val newKeyCharacterIndex: Int = if (keyCharacterIndex + 1 == key.length) 0 else keyCharacterIndex + 1
+//          println("newCharacterIndex (in auxiliaryTransform): " + newCharacterIndex)//toremove
 
-          auxiliaryTransform(toTransform.tail, newTransformed, newCharacterIndex)
+          auxiliaryTransform(toTransform.tail, newTransformed, newKeyCharacterIndex)
 
         }
         else auxiliaryTransform(toTransform.tail, newTransformed, keyCharacterIndex)
@@ -38,33 +44,36 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
     }
 
     def defineNewTransformed(currentCharacter: Char, transformed: String, keyCharacter: Char): String = {
+      println("keyCharacter (in defineNewTransformed): " + keyCharacter)//toremove
 
       // Additional auxiliary function defined for clarity.
       // If current character does not belong to symbols it is not transformed.
 
-      if (!symbols.contains(currentCharacter)) {
+      if (!innerSymbols.contains(currentCharacter)) {
         transformed + currentCharacter
       }
 
       else {
-        val characterIndex = symbols.indexOf(currentCharacter)
+        val characterIndex = innerSymbols.indexOf(currentCharacter)
 
         // to comment
 
-        val keyIndex: Int = symbols.indexOf(keyCharacter.toUpper)
+        val keyIndex: Int = symbols.indexOf(keyCharacter.toUpper) // ! symbols, not innerSymbols!!!
 
         // Index of letter after transformation is determined regarding symbols array length. If index exceeds
         // array's length it goes to the array's beginning.
 
         val newCharacterIndex: Int = {
 
-          if (characterIndex + keyIndex > symbols.length - 1)
-            characterIndex + keyIndex - symbols.length
+          if (characterIndex + keyIndex > innerSymbols.length - 1)
+            characterIndex + keyIndex - innerSymbols.length
 
           else characterIndex + keyIndex
         }
 
-        transformed + symbols(newCharacterIndex)
+        println("newCharacterIndex (in defineNewTransformed): " + newCharacterIndex)//toremove
+
+        transformed + innerSymbols(newCharacterIndex)
       }
     }
 

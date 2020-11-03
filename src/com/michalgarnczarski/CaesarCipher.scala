@@ -5,7 +5,7 @@ import scala.annotation.tailrec
 class CaesarCipher(symbols: Array[Char], key: Int) extends Cipher(symbols) {
   require(key <= symbols.length && key >= 0)
 
-  override protected def transform(text: String, symbols: Array[Char]): String = {
+  override protected def transform(text: String, innerSymbols: Array[Char]): String = {
 
     // An auxiliary function implemented to transform text recursively.
 
@@ -33,25 +33,25 @@ class CaesarCipher(symbols: Array[Char], key: Int) extends Cipher(symbols) {
       // Additional auxiliary function defined for clarity.
       // If current character does not belong to symbols it is not transformed.
 
-      if (!symbols.contains(currentCharacter)) {
+      if (!innerSymbols.contains(currentCharacter)) {
         transformed + currentCharacter
       }
 
       else {
-        val characterIndex = symbols.indexOf(currentCharacter)
+        val characterIndex = innerSymbols.indexOf(currentCharacter)
 
         // Index of letter after transformation is determined regarding symbols array length. If index exceeds
         // array's length it goes to the array's beginning.
 
         val newCharacterIndex: Int = {
 
-          if (characterIndex + key > symbols.length - 1)
-            characterIndex + key - symbols.length
+          if (characterIndex + key > innerSymbols.length - 1)
+            characterIndex + key - innerSymbols.length
 
           else characterIndex + key
         }
 
-        transformed + symbols(newCharacterIndex)
+        transformed + innerSymbols(newCharacterIndex)
       }
     }
 

@@ -47,5 +47,16 @@ object Main {
 //
 //    println("Hello world.")
 
+    println("\n\n-------------------------------")
+
+
+    val vigenereCipher2: VigenereCipher = new VigenereCipher(symbols,"a")
+    val str3 = "mama"
+    println(vigenereCipher2.encryptOnlyLetters(str3))
+    println()
+    println(vigenereCipher2.encryptAll(str3))
+    println()
+    println(vigenereCipher2.decrypt(vigenereCipher2.encryptAll(str3)))
+
   }
 }
