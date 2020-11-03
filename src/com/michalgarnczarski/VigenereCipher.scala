@@ -14,10 +14,6 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
     @tailrec
     def auxiliaryTransform(toTransform: String, transformed: String, keyCharacterIndex: Int): String = {
 
-      println("toTransform (in auxiliaryTransform): " + toTransform)//toremove
-      println("transformed (in auxiliaryTransform): " + transformed)//toremove
-      println("keyCharacterIndex (in auxiliaryTransform): " + keyCharacterIndex)//toremove
-
       // If 'toTransform' is empty encoding/decoding terminates
 
       if (toTransform == "") transformed
@@ -28,13 +24,11 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
 
       else {
         val currentCharacter = toTransform.head
-        println("currentCharacter (in auxiliaryTransform): " + currentCharacter)//toremove
         val newTransformed: String = defineNewTransformed(currentCharacter, transformed, key(keyCharacterIndex))
 
         if (innerSymbols.contains(currentCharacter)) {
 
           val newKeyCharacterIndex: Int = if (keyCharacterIndex + 1 == key.length) 0 else keyCharacterIndex + 1
-//          println("newCharacterIndex (in auxiliaryTransform): " + newCharacterIndex)//toremove
 
           auxiliaryTransform(toTransform.tail, newTransformed, newKeyCharacterIndex)
 
@@ -44,7 +38,6 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
     }
 
     def defineNewTransformed(currentCharacter: Char, transformed: String, keyCharacter: Char): String = {
-      println("keyCharacter (in defineNewTransformed): " + keyCharacter)//toremove
 
       // Additional auxiliary function defined for clarity.
       // If current character does not belong to symbols it is not transformed.
@@ -70,8 +63,6 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
 
           else characterIndex + keyIndex
         }
-
-        println("newCharacterIndex (in defineNewTransformed): " + newCharacterIndex)//toremove
 
         transformed + innerSymbols(newCharacterIndex)
       }
