@@ -16,7 +16,7 @@ class CaesarCipher(symbols: Array[Char], key: Int) extends Cipher(symbols) {
 
       if (toTransform == "") transformed
 
-      // Otherwise first character of 'toTransform' is encoded/decoded and moved to 'transformed'. The function returns
+      // Otherwise the first character of 'toTransform' is encoded/decoded and moved to 'transformed'. The function returns
       // itself recursively with 'toTransform' without its first character and 'transformed' appended by this character
       // after encoding/decoding.
 

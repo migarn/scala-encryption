@@ -18,7 +18,7 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
 
       if (toTransform == "") transformed
 
-      // Otherwise first character of 'toTransform' is encoded/decoded and moved to 'transformed'. The function returns
+      // Otherwise the first character of 'toTransform' is encoded/decoded and moved to 'transformed'. The function returns
       // itself recursively with 'toTransform' without its first character and 'transformed' appended by this character
       // after encoding/decoding.
 
@@ -26,13 +26,14 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
         val currentCharacter = toTransform.head
         val newTransformed: String = defineNewTransformed(currentCharacter, transformed, key(keyCharacterIndex))
 
+        // If current character belongs to symbols, key character is used. If not, key character will be used with another
+        // character.
+
         if (innerSymbols.contains(currentCharacter)) {
-
           val newKeyCharacterIndex: Int = if (keyCharacterIndex + 1 == key.length) 0 else keyCharacterIndex + 1
-
           auxiliaryTransform(toTransform.tail, newTransformed, newKeyCharacterIndex)
-
         }
+
         else auxiliaryTransform(toTransform.tail, newTransformed, keyCharacterIndex)
       }
     }
@@ -49,9 +50,9 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
       else {
         val characterIndex = innerSymbols.indexOf(currentCharacter)
 
-        // to comment
+        // Current key index is defined based on symbols, not innerSymbols! Crucial during decrypting (reversed alphabet)!
 
-        val keyIndex: Int = symbols.indexOf(keyCharacter.toUpper) // ! symbols, not innerSymbols!!!
+        val keyIndex: Int = symbols.indexOf(keyCharacter.toUpper)
 
         // Index of letter after transformation is determined regarding symbols array length. If index exceeds
         // array's length it goes to the array's beginning.
