@@ -26,9 +26,14 @@ class VigenereCipher(symbols: Array[Char], key: String) extends Cipher(symbols) 
         val currentCharacter = toTransform.head
         val newTransformed: String = defineNewTransformed(currentCharacter, transformed, key(keyCharacterIndex))
 
-        val newCharacterIndex: Int = if (keyCharacterIndex + 1 == key.length) 0 else keyCharacterIndex + 1
+        if (symbols.contains(currentCharacter)) {
 
-        auxiliaryTransform(toTransform.tail, newTransformed, newCharacterIndex)
+          val newCharacterIndex: Int = if (keyCharacterIndex + 1 == key.length) 0 else keyCharacterIndex + 1
+
+          auxiliaryTransform(toTransform.tail, newTransformed, newCharacterIndex)
+
+        }
+        else auxiliaryTransform(toTransform.tail, newTransformed, keyCharacterIndex)
       }
     }
 

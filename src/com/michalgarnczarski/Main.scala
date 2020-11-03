@@ -39,6 +39,8 @@ object Main {
     println(vigenereCipher.encryptAll(str2))
     println(vigenereCipher.decrypt(vigenereCipher.encryptAll(str2)))
 
+    // Nie działa omijanie symboli spoza
+
 
 
 //    println(str.charAt(0))
