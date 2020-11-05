@@ -1,7 +1,7 @@
 package com.michalgarnczarski
 
 import scala.annotation.tailrec
-import scala.io.StdIn.readInt
+import scala.io.StdIn._
 import scala.util.Try
 
 object InputScanner {
@@ -28,4 +28,8 @@ object InputScanner {
     }
   }
 
+  def scanString(instruction: String): String = {
+    println(instruction)
+    readLine()
+  }
 }
