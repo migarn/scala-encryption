@@ -21,7 +21,7 @@ object Main {
 
     val alphabets = List(alphabet, alphabet2)
 
-    val allowedInput: List[Int] = for (a <- alphabets) yield alphabets.indexOf(a) + 1
+    val allowedInput: List[Int] = for (a <- alphabets ::: List(0)) yield (alphabets ::: List(0)).indexOf(a) + 1
 
     println(allowedInput)
 
