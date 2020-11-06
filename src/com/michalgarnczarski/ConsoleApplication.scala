@@ -34,7 +34,20 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
   def encryptOrDecryptMenu(encrypt: Boolean): Boolean = {
 
-    def innerEncryptOrDecryptMenu(encrypt: Boolean, controller: Int): Boolean = ???
+    def innerEncryptOrDecryptMenu(encrypt: Boolean, controller: Int): Boolean = {
+
+      if (controller == 3) false
+
+      else {
+        controller match {
+          case 1 => alphabetMenu(encrypt, true)
+          case 2 => alphabetMenu(encrypt, false)
+        }
+
+        val newController = selectControllerFromMenu()
+        innerEncryptOrDecryptMenu(encrypt, newController)
+      }
+    }
 
     def selectControllerFromMenu(): Int = scanIntForSelectionList("\nType:" +
       "\n1 - to use Caesar cipher" +
@@ -42,6 +55,5 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       "\n3 - to return",1,2,3)
 
     innerEncryptOrDecryptMenu(encrypt, selectControllerFromMenu())
-    false
   }
 }

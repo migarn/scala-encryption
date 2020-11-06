@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d75caaba-6ddd-4493-8d91-f153d38d6b9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="319">
+              <caret line="34" column="26" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -93,8 +93,8 @@
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/VigenereCipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala" />
-        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" />
+        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" />
       </list>
     </option>
   </component>
@@ -138,7 +138,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604681766214" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604682157781" />
     <property name="last_opened_file_path" value="C:/java fx/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -268,8 +268,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="319">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="26" />
         </state>
       </provider>
     </entry>
