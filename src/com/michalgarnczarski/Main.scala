@@ -12,7 +12,8 @@ object Main {
     val caesarCipher: CaesarCipher = new CaesarCipher(symbols,10)
     val vigenereCipher: VigenereCipher = new VigenereCipher(symbols,"szyfr")
 
-//    println(ConsoleApplication.run(List(alphabet)))
+    val consoleApplication = new ConsoleApplication(List(alphabet))
+    println(consoleApplication.run())
 
 
 

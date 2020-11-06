@@ -56,4 +56,11 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
     innerEncryptOrDecryptMenu(encrypt, selectControllerFromMenu())
   }
+
+  def alphabetMenu(encrypt: Boolean, caesar: Boolean): Boolean = {
+
+    def innerAlphabetMenu(encrypt: Boolean, caesar: Boolean, controller: Int): Boolean = ???
+
+    innerAlphabetMenu(encrypt, caesar, 1)
+  }
 }
