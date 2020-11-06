@@ -15,6 +15,16 @@ object Main {
     val consoleApplication = new ConsoleApplication(List(alphabet))
     println(consoleApplication.run())
 
+//    symbols.foreach(s => println(s.getNumericValue))
+
+    val alphabet2: Alphabet = new Alphabet("Latin2", symbols)
+
+    val alphabets = List(alphabet, alphabet2)
+
+    val allowedInput: List[Int] = for (a <- alphabets) yield alphabets.indexOf(a) + 1
+
+    println(allowedInput)
+
 
 
 

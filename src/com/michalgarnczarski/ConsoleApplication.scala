@@ -61,6 +61,24 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
     def innerAlphabetMenu(encrypt: Boolean, caesar: Boolean, controller: Int): Boolean = ???
 
-    innerAlphabetMenu(encrypt, caesar, 1)
+    val instruction: String = {
+
+      val instructionHead: String = "\nType:"
+
+      def generateSelectionList(appendedInstruction: String, index: Int): String = {
+        if (index == alphabets.length + 1) appendedInstruction
+        else {
+          generateSelectionList(appendedInstruction + "\n" + index + " - to use " + alphabets(index).name, index + 1)
+        }
+      }
+
+      generateSelectionList(instructionHead, 0)
+    }
+
+    val allowedInput: List[Int] = for (a <- alphabets) yield alphabets.indexOf(a) + 1
+
+    def selectControllerFromMenu(): Int = scanIntForSelectionList(instruction, allowedInput:_*)
+
+    innerAlphabetMenu(encrypt, caesar, selectControllerFromMenu())
   }
 }
