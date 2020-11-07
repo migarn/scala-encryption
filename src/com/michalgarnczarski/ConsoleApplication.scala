@@ -17,7 +17,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
           case 2 => encryptOrDecryptMenu(false)
         }
 
-        val newController = selectControllerFromMenu()
+        val newController: Int = selectControllerFromMenu()
         innerRun(newController)
       }
     }
@@ -45,7 +45,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
           case 2 => alphabetMenu(encrypt, false)
         }
 
-        val newController = selectControllerFromMenu()
+        val newController: Int = selectControllerFromMenu()
         innerEncryptOrDecryptMenu(encrypt, newController)
       }
     }
@@ -60,10 +60,19 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
   def alphabetMenu(encrypt: Boolean, caesar: Boolean): Boolean = {
 
-    def innerAlphabetMenu(encrypt: Boolean, caesar: Boolean, controller: Int): Boolean = ???
+    def innerAlphabetMenu(encrypt: Boolean, caesar: Boolean, controller: Int): Boolean = {
 
-    val instruction: String = {
+      if (controller == alphabets.length) false
 
+      else {
+        typeKeyMenu(encrypt, caesar, alphabets(controller - 1))
+
+        val newController: Int = selectControllerFromMenu()
+        innerAlphabetMenu(encrypt, caesar, newController)
+      }
+    }
+
+    def generateInstruction(): String = {
       val instructionHead: String = "\nType:"
 
       def generateSelectionList(appendedInstruction: String, index: Int): String = {
@@ -72,13 +81,12 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
           generateSelectionList(appendedInstruction + "\n" + (index + 1) + " - to use " + alphabets(index).name, index + 1)
         }
       }
-
       generateSelectionList(instructionHead, 0)
     }
 
-    val allowedInput: List[Int] = (1 to alphabets.length).toList
+    def generateAllowedInput(): List[Int] = (1 to alphabets.length).toList
 
-    def selectControllerFromMenu(): Int = scanIntForSelectionList(instruction, allowedInput:_*)
+    def selectControllerFromMenu(): Int = scanIntForSelectionList(generateInstruction(), generateAllowedInput():_*)
 
     innerAlphabetMenu(encrypt, caesar, selectControllerFromMenu())
   }
