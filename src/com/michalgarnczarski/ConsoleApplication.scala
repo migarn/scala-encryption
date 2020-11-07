@@ -167,24 +167,19 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
   def encryptMenu(cipher: Cipher, text: String): Boolean = {
 
-    def encryptMenuInner(cipher: Cipher, text: String, controller: Int): Boolean = {
-
-      if (controller == 3) false
-
-      else {
-        controller match {
-          case 1 => println("\nEncrypted text:\n" + cipher.encryptAll(text))
-          case 2 => println("\nEncrypted text:\n" + cipher.encryptOnlyLetters(text))
-        }
-        true
-      }
-    }
-
-    def selectControllerFromMenu(): Int = scanIntForSelectionList("\nType:" +
+    val controller: Int = scanIntForSelectionList("\nType:" +
       "\n1 - to maintain spaces, punctuation and symbols outside the selected alphabet" +
       "\n2 - to reject spaces, punctuation and symbols outside the selected alphabet" +
       "\n3 - to return",1,2,3)
 
-    encryptMenuInner(cipher, text, selectControllerFromMenu())
+    if (controller == 3) false
+
+    else {
+      controller match {
+        case 1 => println("\nEncrypted text:\n" + cipher.encryptAll(text))
+        case 2 => println("\nEncrypted text:\n" + cipher.encryptOnlyLetters(text))
+      }
+      true
+    }
   }
 }
