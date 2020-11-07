@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d75caaba-6ddd-4493-8d91-f153d38d6b9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -74,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="72" column="14" lean-forward="true" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
+            <state relative-caret-position="269">
+              <caret line="179" column="7" selection-start-line="179" selection-start-column="7" selection-end-line="179" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -268,8 +267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="72" column="14" lean-forward="true" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
+        <state relative-caret-position="269">
+          <caret line="179" column="7" selection-start-line="179" selection-start-column="7" selection-end-line="179" selection-end-column="7" />
         </state>
       </provider>
     </entry>

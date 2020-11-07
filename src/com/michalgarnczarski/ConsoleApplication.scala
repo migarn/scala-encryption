@@ -110,7 +110,8 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
             else textMenu(encrypt, new VigenereCipher(alphabet.symbols, input))
           }
           catch {
-            case _: IllegalArgumentException => println("\nPlease type correct key."); false
+            case _: IllegalArgumentException => println("\nPlease type correct key.")
+              false
           }
         }
 
@@ -137,21 +138,17 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
           try {
 
             if (encrypt) {
-              false
+              encryptMenu(cipher, input)
             }
 
             else {
               println("\nDecrypted text:\n" + cipher.decrypt(input))
-              return true
+              true
             }
-
-
-
-
-
           }
           catch {
-            case _: IllegalArgumentException => println("\nPlease type correct text."); false
+            case _: IllegalArgumentException => println("\nPlease type correct text.")
+              false
           }
         }
 
@@ -166,5 +163,28 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
     def generateInput(): String = scanString("\nType text to " + (if (encrypt) "encrypt" else "decrypt") +
       " or type -1 to return:")
     innerTextMenu(encrypt, cipher, generateInput())
+  }
+
+  def encryptMenu(cipher: Cipher, text: String): Boolean = {
+
+    def encryptMenuInner(cipher: Cipher, text: String, controller: Int): Boolean = {
+
+      if (controller == 3) false
+
+      else {
+        controller match {
+          case 1 => println("\nEncrypted text:\n" + cipher.encryptAll(text))
+          case 2 => println("\nEncrypted text:\n" + cipher.encryptOnlyLetters(text))
+        }
+        true
+      }
+    }
+
+    def selectControllerFromMenu(): Int = scanIntForSelectionList("\nType:" +
+      "\n1 - to maintain spaces, punctuation and symbols outside the selected alphabet" +
+      "\n2 - to reject spaces, punctuation and symbols outside the selected alphabet" +
+      "\n3 - to return",1,2,3)
+
+    encryptMenuInner(cipher, text, selectControllerFromMenu())
   }
 }
