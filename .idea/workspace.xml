@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d75caaba-6ddd-4493-8d91-f153d38d6b9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Encryption/com/michalgarnczarski/CaesarCipher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Encryption/com/michalgarnczarski/CaesarCipher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Encryption/com/michalgarnczarski/ConsoleApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Encryption/com/michalgarnczarski/ConsoleApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="102" column="88" selection-start-line="102" selection-start-column="88" selection-end-line="102" selection-end-column="88" />
+            <state relative-caret-position="568">
+              <caret line="143" column="51" lean-forward="true" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -96,8 +92,8 @@
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/VigenereCipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" />
-        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" />
+        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" />
       </list>
     </option>
   </component>
@@ -214,7 +210,7 @@
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.32819384" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.17180617" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Maven" order="2" />
@@ -271,8 +267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="102" column="88" selection-start-line="102" selection-start-column="88" selection-end-line="102" selection-end-column="88" />
+        <state relative-caret-position="568">
+          <caret line="143" column="51" lean-forward="true" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
         </state>
       </provider>
     </entry>

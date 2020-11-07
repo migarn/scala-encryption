@@ -116,7 +116,31 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
     innerKeyMenu(encrypt, caesar, alphabet, generateInput())
   }
 
-  def textMenu(encrypt: Boolean, cipher: Cipher) = {
-    println("Encrypt: " + encrypt + ", cipher: " + cipher)
+  def textMenu(encrypt: Boolean, cipher: Cipher): Boolean = {
+
+    def innerTextMenu(encrypt: Boolean, cipher: Cipher, input: String): Boolean = {
+
+      if (input == "-1") false
+
+      else {
+        try {
+
+
+
+
+
+        }
+        catch {
+          case _: IllegalArgumentException => println("\nPlease type correct text.")
+        }
+
+        val newInput: String = generateInput()
+        innerTextMenu(encrypt, cipher, newInput)
+      }
+    }
+
+    def generateInput(): String = scanString("\nType text to " + (if (encrypt) "encrypt" else "decrypt") +
+      " or type -1 to return:")
+    innerTextMenu(encrypt, cipher, generateInput())
   }
 }
