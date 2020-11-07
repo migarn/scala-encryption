@@ -19,10 +19,11 @@ object Main {
 
     val alphabet2: Alphabet = new Alphabet("Latin2", symbols)
 
-    val alphabets = List(alphabet, alphabet2)
+    val alphabets = List(alphabet)
 
-    val allowedInput: List[Int] = for (a <- alphabets ::: List(0)) yield (alphabets ::: List(0)).indexOf(a) + 1
+//    val allowedInput: List[Int] = for (a <- alphabets ::: List(0)) yield (alphabets ::: List(0)).indexOf(a) + 1
 
+    val allowedInput: List[Int] = (1 to alphabets.length).toList
     println(allowedInput)
 
 

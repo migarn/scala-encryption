@@ -3,6 +3,7 @@ package com.michalgarnczarski
 import com.michalgarnczarski.InputScanner.scanIntForSelectionList
 
 class ConsoleApplication(alphabets: List[Alphabet]) {
+  require(alphabets.nonEmpty)
 
   def run(): String = {
 
@@ -75,7 +76,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       generateSelectionList(instructionHead, 0)
     }
 
-    val allowedInput: List[Int] = for (a <- alphabets ::: List(0)) yield (alphabets ::: List(0)).indexOf(a) + 1
+    val allowedInput: List[Int] = (1 to alphabets.length).toList
 
     def selectControllerFromMenu(): Int = scanIntForSelectionList(instruction, allowedInput:_*)
 
