@@ -1,6 +1,6 @@
 package com.michalgarnczarski
 
-import com.michalgarnczarski.InputScanner.scanIntForSelectionList
+import com.michalgarnczarski.InputScanner._
 
 class ConsoleApplication(alphabets: List[Alphabet]) {
   require(alphabets.nonEmpty)
@@ -65,7 +65,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       if (controller == alphabets.length) false
 
       else {
-        typeKeyMenu(encrypt, caesar, alphabets(controller - 1))
+        keyMenu(encrypt, caesar, alphabets(controller - 1))
 
         val newController: Int = selectControllerFromMenu()
         innerAlphabetMenu(encrypt, caesar, newController)
@@ -89,5 +89,29 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
     def selectControllerFromMenu(): Int = scanIntForSelectionList(generateInstruction(), generateAllowedInput():_*)
 
     innerAlphabetMenu(encrypt, caesar, selectControllerFromMenu())
+  }
+
+  def keyMenu(encrypt: Boolean, caesar: Boolean, alphabet: Alphabet): Boolean = {
+
+    def innerKeyMenu(encrypt: Boolean, caesar: Boolean, alphabet: Alphabet, input: String): Boolean = {
+
+      if (input == "-1") false
+
+      else {
+        try {
+          if (caesar) textMenu(encrypt, new CaesarCipher(alphabet.symbols, input.toInt))
+          else textMenu(encrypt, new VigenereCipher(alphabet.symbols, input))
+        }
+        catch {
+          case _: IllegalArgumentException => println("\nPlease type correct key.")
+        }
+
+        val newInput: String = generateInput()
+        innerKeyMenu(encrypt, caesar, alphabet, newInput)
+      }
+    }
+
+    def generateInput(): String = scanString("\nType key or type -1 to return:")
+    innerKeyMenu(encrypt, caesar, alphabet, generateInput())
   }
 }
