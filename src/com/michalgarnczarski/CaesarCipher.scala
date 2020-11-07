@@ -2,7 +2,7 @@ package com.michalgarnczarski
 
 import scala.annotation.tailrec
 
-class CaesarCipher(symbols: Array[Char], key: Int) extends Cipher(symbols) {
+class CaesarCipher(symbols: Array[Char], val key: Int) extends Cipher(symbols) {
   require(key <= symbols.length && key >= 0)
 
   override protected def transform(text: String, innerSymbols: Array[Char]): String = {
