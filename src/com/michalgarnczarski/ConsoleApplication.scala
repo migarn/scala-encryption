@@ -62,7 +62,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
     def innerAlphabetMenu(encrypt: Boolean, caesar: Boolean, controller: Int): Boolean = {
 
-      if (controller == alphabets.length) false
+      if (controller == alphabets.length + 1) false
 
       else {
         keyMenu(encrypt, caesar, alphabets(controller - 1))
@@ -78,13 +78,14 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       def generateSelectionList(appendedInstruction: String, index: Int): String = {
         if (index == alphabets.length) appendedInstruction + "\n" + (index + 1) + " - to return"
         else {
-          generateSelectionList(appendedInstruction + "\n" + (index + 1) + " - to use " + alphabets(index).name, index + 1)
+          generateSelectionList(appendedInstruction + "\n" + (index + 1) + " - to use " +
+            alphabets(index).name + " alphabet", index + 1)
         }
       }
       generateSelectionList(instructionHead, 0)
     }
 
-    def generateAllowedInput(): List[Int] = (1 to alphabets.length).toList
+    def generateAllowedInput(): List[Int] = (1 to (alphabets.length + 1)).toList
 
     def selectControllerFromMenu(): Int = scanIntForSelectionList(generateInstruction(), generateAllowedInput():_*)
 
@@ -113,5 +114,9 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
     def generateInput(): String = scanString("\nType key or type -1 to return:")
     innerKeyMenu(encrypt, caesar, alphabet, generateInput())
+  }
+
+  def textMenu(encrypt: Boolean, cipher: Cipher) = {
+    println("Encrypt: " + encrypt + ", cipher: " + cipher)
   }
 }
