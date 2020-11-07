@@ -13,8 +13,8 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
       else {
         controller match {
-          case 1 => encryptOrDecryptMenu(true)
-          case 2 => encryptOrDecryptMenu(false)
+          case 1 => encryptOrDecryptMenu(encrypt = true)
+          case 2 => encryptOrDecryptMenu(encrypt = false)
         }
 
         val newController: Int = selectControllerFromMenu()
@@ -40,13 +40,16 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       if (controller == 3) false
 
       else {
-        controller match {
-          case 1 => alphabetMenu(encrypt, true)
-          case 2 => alphabetMenu(encrypt, false)
+        val menuResult: Boolean = controller match {
+          case 1 => alphabetMenu(encrypt, caesar = true)
+          case 2 => alphabetMenu(encrypt, caesar = false)
         }
 
-        val newController: Int = selectControllerFromMenu()
-        innerEncryptOrDecryptMenu(encrypt, newController)
+        if (menuResult) true
+        else {
+          val newController: Int = selectControllerFromMenu()
+          innerEncryptOrDecryptMenu(encrypt, newController)
+        }
       }
     }
 
@@ -65,10 +68,12 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       if (controller == alphabets.length + 1) false
 
       else {
-        keyMenu(encrypt, caesar, alphabets(controller - 1))
-
-        val newController: Int = selectControllerFromMenu()
-        innerAlphabetMenu(encrypt, caesar, newController)
+        val menuResult = keyMenu(encrypt, caesar, alphabets(controller - 1))
+        if (menuResult) true
+        else {
+          val newController: Int = selectControllerFromMenu()
+          innerAlphabetMenu(encrypt, caesar, newController)
+        }
       }
     }
 
@@ -99,16 +104,21 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       if (input == "-1") false
 
       else {
-        try {
-          if (caesar) textMenu(encrypt, new CaesarCipher(alphabet.symbols, input.toInt))
-          else textMenu(encrypt, new VigenereCipher(alphabet.symbols, input))
-        }
-        catch {
-          case _: IllegalArgumentException => println("\nPlease type correct key.")
+        val menuResult: Boolean = {
+          try {
+            if (caesar) textMenu(encrypt, new CaesarCipher(alphabet.symbols, input.toInt))
+            else textMenu(encrypt, new VigenereCipher(alphabet.symbols, input))
+          }
+          catch {
+            case _: IllegalArgumentException => println("\nPlease type correct key."); false
+          }
         }
 
-        val newInput: String = generateInput()
-        innerKeyMenu(encrypt, caesar, alphabet, newInput)
+        if (menuResult) true
+        else {
+          val newInput: String = generateInput()
+          innerKeyMenu(encrypt, caesar, alphabet, newInput)
+        }
       }
     }
 
@@ -123,19 +133,33 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       if (input == "-1") false
 
       else {
-        try {
+        val menuResult: Boolean = {
+          try {
+
+            if (encrypt) {
+              false
+            }
+
+            else {
+              println("\nDecrypted text:\n" + cipher.decrypt(input))
+              return true
+            }
 
 
 
 
 
+          }
+          catch {
+            case _: IllegalArgumentException => println("\nPlease type correct text."); false
+          }
         }
-        catch {
-          case _: IllegalArgumentException => println("\nPlease type correct text.")
-        }
 
-        val newInput: String = generateInput()
-        innerTextMenu(encrypt, cipher, newInput)
+        if (menuResult) true
+        else {
+          val newInput: String = generateInput()
+          innerTextMenu(encrypt, cipher, newInput)
+        }
       }
     }
 

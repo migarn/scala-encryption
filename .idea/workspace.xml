@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d75caaba-6ddd-4493-8d91-f153d38d6b9e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,8 +47,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="68">
+              <caret line="4" column="76" lean-forward="true" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -73,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="143" column="51" lean-forward="true" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
+            <state relative-caret-position="235">
+              <caret line="72" column="14" lean-forward="true" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -91,8 +92,8 @@
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Cipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/VigenereCipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala" />
-        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" />
+        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" />
       </list>
     </option>
@@ -210,7 +211,7 @@
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.17180617" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.48568282" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Maven" order="2" />
@@ -227,13 +228,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -265,10 +259,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="76" lean-forward="true" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="143" column="51" lean-forward="true" selection-start-line="143" selection-start-column="51" selection-end-line="143" selection-end-column="51" />
+        <state relative-caret-position="235">
+          <caret line="72" column="14" lean-forward="true" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
         </state>
       </provider>
     </entry>
