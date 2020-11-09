@@ -29,7 +29,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       "\n2 - to decrypt text" +
       "\n3 - to terminate",1,2,3)
 
-    println("\nThe application enables encrypting and decrypting given text by means of two ciphers:" +
+    println("\nThe application enables encrypting and decrypting given text by means of two ciphers: " +
       "Caesar cipher and Vigenere cipher.")
 
     innerRun(selectControllerFromMenu())
