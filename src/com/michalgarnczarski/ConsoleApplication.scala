@@ -5,6 +5,8 @@ import com.michalgarnczarski.InputScanner._
 class ConsoleApplication(alphabets: List[Alphabet]) {
   require(alphabets.nonEmpty)
 
+  // Function launching console user interface
+
   def run(): String = {
 
     def innerRun(controller: Int): String = {
@@ -33,6 +35,8 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
     innerRun(selectControllerFromMenu())
   }
 
+  // Function launching menu to choose between encrypting and decrypting
+
   def encryptOrDecryptMenu(encrypt: Boolean): Boolean = {
 
     def innerEncryptOrDecryptMenu(encrypt: Boolean, controller: Int): Boolean = {
@@ -46,6 +50,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
         }
 
         if (menuResult) true
+
         else {
           val newController: Int = selectControllerFromMenu()
           innerEncryptOrDecryptMenu(encrypt, newController)
@@ -61,6 +66,8 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
     innerEncryptOrDecryptMenu(encrypt, selectControllerFromMenu())
   }
 
+  // Function launching menu to choose specific alphabet
+
   def alphabetMenu(encrypt: Boolean, caesar: Boolean): Boolean = {
 
     def innerAlphabetMenu(encrypt: Boolean, caesar: Boolean, controller: Int): Boolean = {
@@ -69,7 +76,9 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
       else {
         val menuResult = keyMenu(encrypt, caesar, alphabets(controller - 1))
+
         if (menuResult) true
+
         else {
           val newController: Int = selectControllerFromMenu()
           innerAlphabetMenu(encrypt, caesar, newController)
@@ -82,20 +91,23 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
       def generateSelectionList(appendedInstruction: String, index: Int): String = {
         if (index == alphabets.length) appendedInstruction + "\n" + (index + 1) + " - to return"
+
         else {
           generateSelectionList(appendedInstruction + "\n" + (index + 1) + " - to use " +
             alphabets(index).name, index + 1)
         }
       }
+
       generateSelectionList(instructionHead, 0)
     }
 
     def generateAllowedInput(): List[Int] = (1 to (alphabets.length + 1)).toList
-
     def selectControllerFromMenu(): Int = scanIntForSelectionList(generateInstruction(), generateAllowedInput():_*)
 
     innerAlphabetMenu(encrypt, caesar, selectControllerFromMenu())
   }
+
+  // Function launching menu to type a key
 
   def keyMenu(encrypt: Boolean, caesar: Boolean, alphabet: Alphabet): Boolean = {
 
@@ -116,6 +128,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
         }
 
         if (menuResult) true
+
         else {
           val newInput: String = generateInput()
           innerKeyMenu(encrypt, caesar, alphabet, newInput)
@@ -124,8 +137,11 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
     }
 
     def generateInput(): String = scanString("\nType key or type -1 to return:")
+
     innerKeyMenu(encrypt, caesar, alphabet, generateInput())
   }
+
+  // Function launching menu to type a text to encrypt/decrypt
 
   def textMenu(encrypt: Boolean, cipher: Cipher): Boolean = {
 
@@ -136,7 +152,6 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
       else {
         val menuResult: Boolean = {
           try {
-
             if (encrypt) {
               encryptMenu(cipher, input)
             }
@@ -153,6 +168,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
         }
 
         if (menuResult) true
+
         else {
           val newInput: String = generateInput()
           innerTextMenu(encrypt, cipher, newInput)
@@ -162,8 +178,11 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
     def generateInput(): String = scanString("\nType text to " + (if (encrypt) "encrypt" else "decrypt") +
       " or type -1 to return:")
+
     innerTextMenu(encrypt, cipher, generateInput())
   }
+
+  // Function launching menu to select encrypting mode
 
   def encryptMenu(cipher: Cipher, text: String): Boolean = {
 
