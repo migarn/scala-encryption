@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d75caaba-6ddd-4493-8d91-f153d38d6b9e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/Cipher.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/Cipher.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,10 +17,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/Cipher.scala">
+        <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="425">
+              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -37,10 +36,10 @@
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Alphabet.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/VigenereCipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/InputScanner.scala" />
-        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Main.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/ConsoleApplication.scala" />
         <option value="$PROJECT_DIR$/src/com/michalgarnczarski/Cipher.scala" />
+        <option value="$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala" />
       </list>
     </option>
   </component>
@@ -84,7 +83,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604943396179" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1604943897930" />
     <property name="last_opened_file_path" value="C:/java fx/javafx-sdk-11.0.2/lib/javafx.web.jar!/" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -205,17 +204,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="76" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/Cipher.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/michalgarnczarski/CaesarCipher.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
         </state>
       </provider>
     </entry>
