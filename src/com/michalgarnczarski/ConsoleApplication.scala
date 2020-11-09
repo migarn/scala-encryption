@@ -37,7 +37,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
   // Function launching menu to choose between encrypting and decrypting
 
-  def encryptOrDecryptMenu(encrypt: Boolean): Boolean = {
+  private def encryptOrDecryptMenu(encrypt: Boolean): Boolean = {
 
     def innerEncryptOrDecryptMenu(encrypt: Boolean, controller: Int): Boolean = {
 
@@ -68,7 +68,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
   // Function launching menu to choose specific alphabet
 
-  def alphabetMenu(encrypt: Boolean, caesar: Boolean): Boolean = {
+  private def alphabetMenu(encrypt: Boolean, caesar: Boolean): Boolean = {
 
     def innerAlphabetMenu(encrypt: Boolean, caesar: Boolean, controller: Int): Boolean = {
 
@@ -109,7 +109,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
   // Function launching menu to type a key
 
-  def keyMenu(encrypt: Boolean, caesar: Boolean, alphabet: Alphabet): Boolean = {
+  private def keyMenu(encrypt: Boolean, caesar: Boolean, alphabet: Alphabet): Boolean = {
 
     def innerKeyMenu(encrypt: Boolean, caesar: Boolean, alphabet: Alphabet, input: String): Boolean = {
 
@@ -143,7 +143,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
   // Function launching menu to type a text to encrypt/decrypt
 
-  def textMenu(encrypt: Boolean, cipher: Cipher): Boolean = {
+  private def textMenu(encrypt: Boolean, cipher: Cipher): Boolean = {
 
     def innerTextMenu(encrypt: Boolean, cipher: Cipher, input: String): Boolean = {
 
@@ -184,7 +184,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
 
   // Function launching menu to select encrypting mode
 
-  def encryptMenu(cipher: Cipher, text: String): Boolean = {
+  private def encryptMenu(cipher: Cipher, text: String): Boolean = {
 
     val controller: Int = scanIntForSelectionList("\nType:" +
       "\n1 - to maintain spaces, punctuation and symbols outside the selected alphabet" +
