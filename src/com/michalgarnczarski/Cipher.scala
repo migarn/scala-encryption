@@ -2,8 +2,7 @@ package com.michalgarnczarski
 
 abstract class Cipher(val symbols: Array[Char]) {
 
-  // The transform function is meant to both encrypting and decrypting. The function's implementation
-  // depends on a specific cipher.
+  // The transform function is meant to both encrypting and decrypting.
 
   protected def transform(text: String, innerSymbols: Array[Char]): String
 
