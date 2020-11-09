@@ -84,7 +84,7 @@ class ConsoleApplication(alphabets: List[Alphabet]) {
         if (index == alphabets.length) appendedInstruction + "\n" + (index + 1) + " - to return"
         else {
           generateSelectionList(appendedInstruction + "\n" + (index + 1) + " - to use " +
-            alphabets(index).name + " alphabet", index + 1)
+            alphabets(index).name, index + 1)
         }
       }
       generateSelectionList(instructionHead, 0)
